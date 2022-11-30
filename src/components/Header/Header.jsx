@@ -4,12 +4,19 @@ import Navbar from "../Navbar/Navbar"
 
 import styles from "./Header.module.css"
 
+import Logo from "../../assets/logo.svg"
+
 const Header = () => {
   return (
-    <header className='headerContainer'>
-        <div>LOGO</div>
+    <header className={styles.headerContainer}>
+      <div className={styles.headerLeft}>
+        <div><img src={Logo} alt="" /></div>
         <Navbar />
-        <div>Login/Sign Up</div>
+      </div>
+      <div className={styles.loginSignUp}>
+        <button className={styles.loginBtn}>Login</button>
+        <button className={styles.signUpBtn}>Sign Up</button>
+      </div>
     </header>
   )
 }
