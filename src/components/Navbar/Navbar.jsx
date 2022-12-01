@@ -2,9 +2,15 @@ import React from 'react'
 
 import styles from "./Navbar.module.css"
 
-const Navbar = () => {
+const Navbar = ({links}) => {
   return (
-    <div>Navbar</div>
+    <nav className={styles.navbarContainer}>
+      {links.map(item =>{
+        return(
+          <a href="#" className={styles.linkItem}>{item.linkName}</a>
+        )
+      })}
+    </nav>
   )
 }
 
