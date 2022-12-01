@@ -16,3 +16,9 @@
 .linkItem:hover{
     color: var(--very-dark-violet);
 }
+
+@media screen and (max-width:500px){
+    .navbarContainer{
+        display: none;
+    }
+}

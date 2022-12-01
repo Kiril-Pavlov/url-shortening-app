@@ -46,3 +46,37 @@
 .signUpBtn:hover{
     cursor: pointer;
 }
+
+.hamburgerContainer{
+    display: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburgerIcon{
+    filter: invert(.5);
+    width: 40px;
+}
+
+.closeIcon{
+    filter: invert(.5);
+    width: 35px;
+}
+
+@media screen and (max-width:500px){
+    .headerContainer{
+        max-width: 90%;
+        margin: 20px auto;
+    }
+    
+    .loginSignUp{
+        display: none;
+    }
+
+    .hamburgerContainer{
+        display: block;
+    }
+}
