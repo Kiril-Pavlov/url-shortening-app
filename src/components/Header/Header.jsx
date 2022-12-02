@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerLeft}>
-        <div><img src={Logo} alt="" /></div>
+        <div className={styles.headerTitleContainer}><img src={Logo} alt="" /></div>
         <Navbar links={links}/>
       </div>
       <div className={styles.loginSignUp}>
@@ -37,6 +37,19 @@ const Header = () => {
         ):(
           <img src={Hamburger} alt="hamburger" className={styles.hamburgerIcon} onClick={toggleIsOpen}/>
         )}
+      </div>
+      <div className={styles.hamburgerMenuContainer}>
+          <div className={styles.hamburgerLinksContainer}>
+            {links.map(item=>{
+              return(
+                <a href="#" className={styles.hamburgerLinkItem}>{item.linkName}</a>
+              )
+            })}
+          </div>
+          <div className={styles.hamburgerLogSignContainer}>
+            <a href="#" className={styles.hamburgerLinkItem}>Login</a>
+            <button className={styles.hamSignUpBtn}>Sign Up</button>
+          </div>
       </div>
     </header>
   )
