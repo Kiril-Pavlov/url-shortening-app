@@ -38,7 +38,8 @@ const Header = () => {
           <img src={Hamburger} alt="hamburger" className={styles.hamburgerIcon} onClick={toggleIsOpen}/>
         )}
       </div>
-      <div className={styles.hamburgerMenuContainer}>
+      
+      <div className={isOpen?`${styles.hamburgerMenuContainer} ${styles.activeHamMenu}`:`${styles.hamburgerMenuContainer}`}>
           <div className={styles.hamburgerLinksContainer}>
             {links.map(item=>{
               return(

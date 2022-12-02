@@ -76,6 +76,8 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    transform: scale(0);
+    transition: all .3s ease-in;
 }
 
 .hamburgerLinksContainer{
@@ -112,6 +114,10 @@
     font-family: var(--primary-font);
     font-weight: var(--font-weight-bold);
     text-transform: capitalize;
+}
+
+.activeHamMenu{
+    transform: scale(1);
 }
 
 @media screen and (max-width:700px){
