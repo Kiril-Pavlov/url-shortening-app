@@ -74,7 +74,7 @@
     background-color: var(--dark-violet);
     border-radius: 10px;
     padding: 20px;
-    display: flex;
+    display: none;
     flex-direction: column;
     transform: scale(0);
     transition: all .3s ease-in;
@@ -136,5 +136,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .hamburgerMenuContainer{
+        display: flex;
     }
 }
