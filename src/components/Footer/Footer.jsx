@@ -24,7 +24,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className={styles.footerLinksList}>
-          <h3 className={styles.footerSubtitle}>Resources</h3>
+          <div className={styles.footerSubtitle}>Resources</div>
           <ul className={styles.footerSubList}>
             <li>Blog</li>
             <li>Developers</li>
@@ -32,7 +32,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className={styles.footerLinksList}>
-          <h3 className={styles.footerSubtitle}>Company</h3>
+          <div className={styles.footerSubtitle}>Company</div>
           <ul className={styles.footerSubList}>
             <li>About</li>
             <li>Our Team</li>

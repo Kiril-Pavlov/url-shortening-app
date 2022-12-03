@@ -53,3 +53,28 @@
     position: relative;
     top: 10px;
 }
+
+@media screen and (max-width:700px){
+    .footerContent{
+        flex-direction: column;
+        align-items: center;
+        margin: 0px auto;
+        position: relative;
+        padding: 30px 0px 50px 0px;
+        gap: 20px;
+    }
+    .footerLogoContainer{
+        padding-bottom: 30px;
+    }
+
+    .footerLinksList{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footerSubList{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
