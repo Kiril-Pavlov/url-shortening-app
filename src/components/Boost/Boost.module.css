@@ -2,7 +2,7 @@
     background-color: var(--dark-violet);
     background-image: url("../../assets/bg-boost-desktop.svg");
     background-size: cover;
-    height: 200px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,4 +27,19 @@
     border: none;
     outline: none;
     border-radius: 30px; 
+}
+
+@media screen and (max-width:700px){
+    .boostContainer{
+        background-image: url("../../assets/bg-boost-mobile.svg");
+        height: 300px;
+    }
+
+    .boostTitle{
+        font-size: 26px;
+    }
+
+    .boostButton{
+        font-size: 14px;
+    }
 }
