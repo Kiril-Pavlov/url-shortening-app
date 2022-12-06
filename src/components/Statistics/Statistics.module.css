@@ -96,3 +96,33 @@
 .three{
     top:74px;
 }
+
+@media screen and (max-width:700px){
+    .statisticsContent{
+        padding: 30px 0px;
+        gap: 15px;
+    }
+
+    .statisticsTitle{
+        font-size: 26px;
+    }
+
+    .statisticsParagraph{
+        max-width: 300px;
+    }
+
+    .statisticsCardsContainer{
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .statisticsCard{
+        align-items: center;
+    }
+
+    .cyanBackgroundLine{
+        height: 80%;
+        width: 10px;
+        top: 0%;
+    }
+}
