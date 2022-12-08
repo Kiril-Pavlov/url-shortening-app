@@ -31,11 +31,12 @@
 }
 
 .heroButton{
-    margin-top: 20px;
+    margin: 20px 0px;
     padding: 10px 20px;
+    font-size: 20px;
     background-color: var(--cyan);
     border: none;
-    border-radius: 20px;
+    border-radius: 40px;
     font-family: var(--primary-font);
     font-weight: var(--font-weight-bold);
     color: white;
@@ -55,4 +56,39 @@
     width: 140%;
     position: relative;
     left: 50px;
+}
+
+@media screen and (max-width:700px){
+    .heroContainer{
+        max-width: 90%;
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+    
+    .heroLeft{
+        align-items: center;
+        width: 100%;
+    }
+    
+    .heroTitle{
+        font-size: 40px;
+        text-align: center;
+    }
+    
+    .heroParagraph{
+        text-align: center;
+        width: 100%;
+    }
+    
+    .heroRight{
+        display: flex;
+        width: 100%;
+        position: relative;
+    }
+    
+    .heroRight img{
+        width: 140%;
+        position: relative;
+        left: 20px;
+    }
 }
