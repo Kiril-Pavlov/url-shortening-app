@@ -4,9 +4,6 @@
   margin: 0px;
 }
 
-body{
-  overflow-x: hidden;
-}
 
 :root{
   --cyan:hsl(180, 66%, 49%);

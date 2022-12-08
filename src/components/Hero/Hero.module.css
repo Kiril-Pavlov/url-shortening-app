@@ -60,14 +60,14 @@
 
 @media screen and (max-width:700px){
     .heroContainer{
-        max-width: 90%;
+        max-width: 100%;
         flex-direction: column-reverse;
         gap: 20px;
     }
     
     .heroLeft{
         align-items: center;
-        width: 100%;
+        width: 90%;
     }
     
     .heroTitle{
@@ -84,6 +84,7 @@
         display: flex;
         width: 100%;
         position: relative;
+        overflow: hidden;
     }
     
     .heroRight img{
