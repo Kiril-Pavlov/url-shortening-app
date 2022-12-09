@@ -1,0 +1,44 @@
+.mainSectionOuterContainer{
+    margin-top: 150px;
+    background-color: var(--light-gray);
+}
+
+.mainSectionContainer{
+    background-color: var(--dark-violet);
+    background-image: url("../../assets/bg-shorten-desktop.svg");
+    max-width: 1100px;
+    margin: auto;
+    height: 150px;
+    border-radius: 10px;
+    padding: 50px;
+    position: relative;
+    top: -75px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.mainSectionInput{
+    width: 77%;
+    border-radius: 15px;
+    padding: 10px 20px;
+}
+
+.mainSectionInput::placeholder{
+    color: var(--gray);
+    font-family: var(--primary-font);
+    font-size: 16px;}
+
+.mainSectionBtn{
+    width: 21%;
+    font-family: var(--primary-font);
+    color: white;
+    font-weight: var(--font-weight-bold);
+    background-color: var(--cyan);
+    font-size: 16px;
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 15px; 
+}
