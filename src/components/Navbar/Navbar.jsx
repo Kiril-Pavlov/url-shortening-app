@@ -7,7 +7,7 @@ const Navbar = ({links}) => {
     <nav className={styles.navbarContainer}>
       {links.map(item =>{
         return(
-          <a href="#" className={styles.linkItem}>{item.linkName}</a>
+          <a href="#" className={styles.linkItem} key={item.linkName}>{item.linkName}</a>
         )
       })}
     </nav>

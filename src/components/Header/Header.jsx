@@ -43,7 +43,7 @@ const Header = () => {
           <div className={styles.hamburgerLinksContainer}>
             {links.map(item=>{
               return(
-                <a href="#" className={styles.hamburgerLinkItem}>{item.linkName}</a>
+                <a href="#" className={styles.hamburgerLinkItem} key={item.linkName}>{item.linkName}</a>
               )
             })}
           </div>
