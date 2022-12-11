@@ -42,3 +42,11 @@
     outline: none;
     border-radius: 15px; 
 }
+
+.shorterLinksList{
+    max-width: 1100px;
+    margin: auto;
+    position: relative;
+    border: 1px solid red;
+    top: -75px;
+}

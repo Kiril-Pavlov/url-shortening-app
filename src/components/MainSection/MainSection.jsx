@@ -7,13 +7,20 @@ import styles from "./MainSection.module.css"
 const MainSection = () => {
 
   const [urlInput, setUrlInput] = useState("")
+  const [shortURLList, setShortURLList] = useState([])
 
-  const getShortLink = () =>{
+  const getShortLink = () => {
     axios.get(`https://api.shrtco.de/v2/shorten?url=${urlInput}`)
-    .then(res=>{
-      console.log(res.data.result)
-    })
+      .then(res => {
+        // console.log(res.data.result.original_link)
+        let originalLink = res.data.result.original_link;
+        // console.log(res.data.result.short_link)
+        let shortLink = res.data.result.short_link;
+        let newLink = { originalLink, shortLink }
+        setShortURLList([...shortURLList, newLink])
+      })
   }
+  // console.log(shortURLList)
 
   return (
     <main className={styles.mainSectionOuterContainer}>
@@ -31,6 +38,21 @@ const MainSection = () => {
         >
           Shorten it!
         </button>
+      </div>
+      <div className={styles.shorterLinksList}>
+        {shortURLList.map(item => {
+          return (
+            <div className={styles.shorterLinkItem} key={item.shortLink}>
+              <div className={styles.shorterLinkItemLeft}>
+                <div className={styles.fullURL}>{item.originalLink}</div>
+              </div>
+              <div className={styles.shorterLinkItemRight}>
+                <div className={styles.shortURL}>{item.shortLink}</div>
+                <button className={styles.copyButton}>Copy</button>
+              </div>
+            </div>
+          )
+        })}
       </div>
     </main>
   )
