@@ -28,9 +28,15 @@ const MainSection = () => {
         let newLink = { originalLink, shortLink }
         setShortURLList([...shortURLList, newLink])
         localStorage.setItem("localURLList", JSON.stringify([...shortURLList, newLink]))
+        setUrlInput("");
       })
   }
-  // console.log(shortURLList)
+  
+  const handleDeleteURL = (item)=>{
+    const updated = shortURLList.filter((i)=>i.originalLink !== item.originalLink)
+    setShortURLList(updated)
+    localStorage.setItem("localURLList",JSON.stringify(updated))
+  }
 
   return (
     <main className={styles.mainSectionOuterContainer}>
@@ -58,7 +64,8 @@ const MainSection = () => {
               </div>
               <div className={styles.shorterLinkItemRight}>
                 <div className={styles.shortURL}>{item.shortLink}</div>
-                <button className={styles.copyButton}>Copy</button>
+                <button className={styles.mainSectionBtn}>Copy</button>
+                <button className={styles.mainSectionBtn} onClick={()=>handleDeleteURL(item)}>X</button>
               </div>
             </div>
           )
