@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 
@@ -9,6 +9,15 @@ const MainSection = () => {
   const [urlInput, setUrlInput] = useState("")
   const [shortURLList, setShortURLList] = useState([])
 
+    //get data from localStorage after reloading the page
+    useEffect(() => {
+      if (localStorage.getItem("localURLList")) {
+        let localData = JSON.parse(localStorage.getItem("localURLList"));
+        console.log(localData)
+        setShortURLList(localData)
+      }
+    }, [])
+
   const getShortLink = () => {
     axios.get(`https://api.shrtco.de/v2/shorten?url=${urlInput}`)
       .then(res => {
@@ -18,6 +27,7 @@ const MainSection = () => {
         let shortLink = res.data.result.short_link;
         let newLink = { originalLink, shortLink }
         setShortURLList([...shortURLList, newLink])
+        localStorage.setItem("localURLList", JSON.stringify([...shortURLList, newLink]))
       })
   }
   // console.log(shortURLList)
