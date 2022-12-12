@@ -45,8 +45,49 @@
 
 .shorterLinksList{
     max-width: 1100px;
-    margin: auto;
+    margin: 20px auto;
     position: relative;
-    border: 1px solid red;
     top: -75px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.shorterLinkItem{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.fullURL{
+    font-family: var(--primary-font);
+    font-size: 16px;
+}
+
+.shorterLinkItemRight{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.shortURL{
+    font-family: var(--primary-font);
+    font-size: 16px;
+    color: var(--cyan);
+}
+
+.shorterLinkBtn{
+    border: none;
+    background-color: var(--cyan);
+    color: white;
+    padding: 10px 20px;
+    font-family: var(--primary-font);
+    font-weight: var(--font-weight-bold);
+    font-size: 16px;
+    border-radius: 10px;
 }

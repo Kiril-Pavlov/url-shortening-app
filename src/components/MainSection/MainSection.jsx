@@ -64,8 +64,8 @@ const MainSection = () => {
               </div>
               <div className={styles.shorterLinkItemRight}>
                 <div className={styles.shortURL}>{item.shortLink}</div>
-                <button className={styles.mainSectionBtn}>Copy</button>
-                <button className={styles.mainSectionBtn} onClick={()=>handleDeleteURL(item)}>X</button>
+                <button className={styles.shorterLinkBtn}>Copy</button>
+                <button className={styles.shorterLinkBtn} onClick={()=>handleDeleteURL(item)}>X</button>
               </div>
             </div>
           )
