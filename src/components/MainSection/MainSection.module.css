@@ -45,7 +45,7 @@
 
 .shorterLinksList{
     max-width: 1100px;
-    margin: 20px auto;
+    margin: 20px auto 0px auto;
     position: relative;
     top: -75px;
     display: flex;
@@ -90,4 +90,56 @@
     font-weight: var(--font-weight-bold);
     font-size: 16px;
     border-radius: 10px;
+}
+
+@media screen and (max-width:700px){
+    
+    .mainSectionContainer{
+        background-image: url("../../assets/bg-shorten-mobile.svg");
+        background-size: cover;
+        max-width: 90%;
+        padding: 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .mainSectionInput{
+        width: 100%;
+        font-size: 16px;
+        padding: 10px 30px;
+    }
+    
+    
+    .mainSectionBtn{
+        width: 100%;
+    }
+    
+    .shorterLinksList{
+        max-width: 90%;
+    }
+    
+    .shorterLinkItem{
+        flex-direction: column;
+    }
+
+    .shorterLinkItemLeft{
+        width: 100%;
+        border-bottom: 1px solid var(--gray);
+    }
+    
+    .fullURL{
+        width: 100%;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    
+    .shorterLinkItemRight{
+        flex-direction: column;
+        padding-top: 10px;
+        width: 100%;
+    }
+    
+    .shorterLinkBtn{
+        width: 100%;
+    }
 }

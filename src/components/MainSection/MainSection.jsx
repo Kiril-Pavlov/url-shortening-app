@@ -1,6 +1,7 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
+import {CopyToClipboard} from 'react-copy-to-clipboard'
 
 import styles from "./MainSection.module.css"
 
@@ -9,14 +10,14 @@ const MainSection = () => {
   const [urlInput, setUrlInput] = useState("")
   const [shortURLList, setShortURLList] = useState([])
 
-    //get data from localStorage after reloading the page
-    useEffect(() => {
-      if (localStorage.getItem("localURLList")) {
-        let localData = JSON.parse(localStorage.getItem("localURLList"));
-        console.log(localData)
-        setShortURLList(localData)
-      }
-    }, [])
+  //get data from localStorage after reloading the page
+  useEffect(() => {
+    if (localStorage.getItem("localURLList")) {
+      let localData = JSON.parse(localStorage.getItem("localURLList"));
+      console.log(localData)
+      setShortURLList(localData)
+    }
+  }, [])
 
   const getShortLink = () => {
     axios.get(`https://api.shrtco.de/v2/shorten?url=${urlInput}`)
@@ -25,17 +26,17 @@ const MainSection = () => {
         let originalLink = res.data.result.original_link;
         // console.log(res.data.result.short_link)
         let shortLink = res.data.result.short_link;
-        let newLink = { originalLink, shortLink }
+        let newLink = { originalLink, shortLink}
         setShortURLList([...shortURLList, newLink])
         localStorage.setItem("localURLList", JSON.stringify([...shortURLList, newLink]))
         setUrlInput("");
       })
   }
-  
-  const handleDeleteURL = (item)=>{
-    const updated = shortURLList.filter((i)=>i.originalLink !== item.originalLink)
+
+  const handleDeleteURL = (item) => {
+    const updated = shortURLList.filter((i) => i.originalLink !== item.originalLink)
     setShortURLList(updated)
-    localStorage.setItem("localURLList",JSON.stringify(updated))
+    localStorage.setItem("localURLList", JSON.stringify(updated))
   }
 
   return (
@@ -64,8 +65,10 @@ const MainSection = () => {
               </div>
               <div className={styles.shorterLinkItemRight}>
                 <div className={styles.shortURL}>{item.shortLink}</div>
-                <button className={styles.shorterLinkBtn}>Copy</button>
-                <button className={styles.shorterLinkBtn} onClick={()=>handleDeleteURL(item)}>X</button>
+                <CopyToClipboard text={item.shortLink}>
+                  <button className={styles.shorterLinkBtn}>Copy</button>
+                </CopyToClipboard>
+                <button className={styles.shorterLinkBtn} onClick={() => handleDeleteURL(item)}>X</button>
               </div>
             </div>
           )
